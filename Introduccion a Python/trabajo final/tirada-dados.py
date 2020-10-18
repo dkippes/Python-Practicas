@@ -1,4 +1,5 @@
 import random
+import os
 
 def tiradaDeDados():
     "Tira los dados, luego pregunta si desea seguir jugando sino concluye"
@@ -6,7 +7,7 @@ def tiradaDeDados():
     numAlt2 = elegirDados()
 
     suma = numAlt1 + numAlt2
-    print("Los numeros tirados son", numAlt1 ,"y ", numAlt2 ," su suma es: ", suma)
+    print("\nLos numeros tirados son", numAlt1 ,"y ", numAlt2 ," su suma es: ", suma)
     continuar = input("Ingrese 'si', si desea continuar: ")
     continuarTirandoSi_(continuar)
 
@@ -16,7 +17,9 @@ def elegirDados():
 
 def continuarTirandoSi_(valor):
     "Tira los dados si el jugador escribe si, sino termina su sesion"
-    tiradaDeDados() if valor == "si" else print("Su sesion a terminado")
+    tiradaDeDados() if valor == "si" else print("\nSu sesion a terminado")
+    os.system("pause")
     
 
+print("Bienvenido a la sesion de tiradas de dados :)")
 tiradaDeDados()
